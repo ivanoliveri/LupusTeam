@@ -22,6 +22,11 @@ namespace Web.Controllers
 
         public ActionResult Contact(ContactUsViewModel viewModel)
         {
+            if (!ModelState.IsValid)
+            {
+                return View("Index",new ContactUsViewModel());
+            }
+
             var fromAddress = new MailAddress("lupusteam.projects@gmail.com", viewModel.fullName);
             var toAddress = new MailAddress("lupusteam.projects@gmail.com");
             const string fromPassword = "skullsett";

@@ -2,11 +2,11 @@
 
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
+    Html.EnableClientValidation(true);
 }
 
 
 <title>Contacto</title>
-
 
 <div class="container-fluid">
     <div class="row-fluid">
@@ -18,23 +18,31 @@
                 
                 <label>Nombre Completo</label>
                 @Html.EditorFor(model => model.fullName)
+                @Html.ValidationMessageFor(model => model.fullName,"",new { @style = "color:red;" })
+
+                
 
                 <label>Telefono</label>
                 @Html.EditorFor(model => model.phone)
+                @Html.ValidationMessageFor(model => model.phone,"",new { @style = "color:red;" })
+               
                                             
                 <label>E-Mail</label>
                 @Html.EditorFor(model => model.mail)
+                @Html.ValidationMessageFor(model => model.mail,"", new { @style = "color:red;" })
                                     
                 <label>Empresa</label>
                 @Html.EditorFor(model => model.enterprise)
+                @Html.ValidationMessageFor(model => model.enterprise,"", new { @style = "color:red;" })
                                 
                 <label>Mensaje</label>
                 @Html.EditorFor(model => model.message)
+                @Html.ValidationMessageFor(model => model.message,"", new { @style = "color:red;" })
+
                 <br/>
                 <button class="btn" type="submit">Contactar</button>
             }  
         </div>
-
 		<div class="span4">
 			<div class="media">
 				 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
