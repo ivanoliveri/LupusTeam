@@ -129,6 +129,9 @@
     <Content Include="Content\img\apple-touch-icon-144-precomposed.png" />
     <Content Include="Content\img\apple-touch-icon-57-precomposed.png" />
     <Content Include="Content\img\apple-touch-icon-72-precomposed.png" />
+    <Content Include="Content\img\carousel-1.jpg" />
+    <Content Include="Content\img\carousel-2.jpg" />
+    <Content Include="Content\img\carousel-3.jpg" />
     <Content Include="Content\img\favicon.ico" />
     <Content Include="Content\img\FedericoQuintas.png" />
     <Content Include="Content\img\glyphicons-halflings-white.png" />
