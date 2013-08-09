@@ -14,7 +14,7 @@
         <div class="span8">
             @using (Html.BeginForm("Contact", "Contact", FormMethod.Post))
             {     
-                <legend>Contacto</legend> 
+                <legend>Contanos acerca de tu proyecto!</legend> 
                 
                 <label>Nombre Completo</label>
                 @Html.EditorFor(model => model.fullName)
@@ -43,28 +43,28 @@
                 <button class="btn" type="submit">Contactar</button>
             }  
         </div>
-		<div class="span4">
+		<div class="span4" style="padding-top: 5%;">
 			<div class="media">
-				 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
+				 <a href="#" class="pull-left"><img src="../../Content/img/back-end.png" class="media-object" alt='' /></a>
 				<div class="media-body">
 					<h4 class="media-heading">
-						Nested media heading
+						Back-End
 					</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 				</div>
 			</div>
 			<div class="media">
-				 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
+				 <a href="#" class="pull-left"><img src="../../Content/img/front-end.png" class="media-object" alt='' /></a>
 				<div class="media-body">
 					<h4 class="media-heading">
-						Nested media heading
+						Front-End
 					</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 				</div>
 			</div>
 			<div class="media">
-				 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
+				 <a href="#" class="pull-left"><img src="../../Content/img/database.png" class="media-object" alt='' /></a>
 				<div class="media-body">
 					<h4 class="media-heading">
-						Nested media heading
+						Bases de Datos
 					</h4> Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin commodo. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis.
 				</div>
 			</div>
