@@ -3,8 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.Mail;
+using System.Text;
 using System.Web;
 using System.Web.Mvc;
+using Web.ViewModels;
 
 namespace Web.Controllers
 {
@@ -15,16 +17,21 @@ namespace Web.Controllers
 
         public ActionResult Index()
         {
-            return View();
+            return View(new ContactUsViewModel());
         }
 
-        public ActionResult Contact(string clientMessage, string mail, string fullName,string phone,string enterprise)
+        public ActionResult Contact(ContactUsViewModel viewModel)
         {
-            var fromAddress = new MailAddress("lupusteam.projects@gmail.com@gmail.com", fullName);
-            var toAddress = new MailAddress("lupusteam.projects@gmail.com@example.com");
+            var fromAddress = new MailAddress("lupusteam.projects@gmail.com", viewModel.fullName);
+            var toAddress = new MailAddress("lupusteam.projects@gmail.com");
             const string fromPassword = "skullsett";
             const string subject = "Subject";
-            const string body = "Body";
+            var stringBuilder = new StringBuilder();
+            string body = stringBuilder.Append("Nombre Completo: ").AppendLine(viewModel.fullName)
+                                       .Append("Telefono: ").AppendLine(viewModel.phone)
+                                       .Append("E-Mail: ").AppendLine(viewModel.mail)
+                                       .Append("Empresa: ").AppendLine(viewModel.enterprise)
+                                       .Append("Mensaje: ").AppendLine(viewModel.message).ToString();
 
             var smtp = new SmtpClient
             {
@@ -43,6 +50,7 @@ namespace Web.Controllers
             {
                 smtp.Send(message);
             }
+            ModelState.Clear();
             return View("Index");
         }
     }

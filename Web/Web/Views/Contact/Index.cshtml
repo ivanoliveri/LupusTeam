@@ -1,4 +1,6 @@
-﻿@{
+﻿@model Web.ViewModels.ContactUsViewModel
+
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -10,28 +12,29 @@
     <div class="row-fluid">
         
         <div class="span8">
-            <form>
-                <fieldset>
-                    <legend>Contacto</legend> 
+            @using (Html.BeginForm("Contact", "Contact", FormMethod.Post))
+            {     
+                <legend>Contacto</legend> 
+                
+                <label>Nombre Completo</label>
+                @Html.EditorFor(model => model.fullName)
 
-                    <label>Nombre Completo</label>
-                    <input type="text" />       
-                              
-                    <label>Telefono</label>
-                    <input type="text" /> 
-
-                    <label>Empresa</label>
-                    <input type="text" />
-
-                    <label>Mensaje</label>  
-                    <textarea>        
-                    </textarea>
-
-                    <span class="help-block">Example block-level help text here.</span> 
-                    <button type="submit" class="btn">Contactar</button>
-                </fieldset>
-            </form>
+                <label>Telefono</label>
+                @Html.EditorFor(model => model.phone)
+                                            
+                <label>E-Mail</label>
+                @Html.EditorFor(model => model.mail)
+                                    
+                <label>Empresa</label>
+                @Html.EditorFor(model => model.enterprise)
+                                
+                <label>Mensaje</label>
+                @Html.EditorFor(model => model.message)
+                <br/>
+                <button class="btn" type="submit">Contactar</button>
+            }  
         </div>
+
 		<div class="span4">
 			<div class="media">
 				 <a href="#" class="pull-left"><img src="http://lorempixel.com/64/64/" class="media-object" alt='' /></a>
